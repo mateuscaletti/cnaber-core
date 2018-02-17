@@ -5,6 +5,7 @@ import br.com.caletti.cnaber.estrutura.EstruturaLote;
 import br.com.caletti.cnaber.estrutura.EstruturaTransacao;
 import br.com.caletti.cnaber.estrutura.registros.SegmentoA;
 import br.com.caletti.cnaber.estrutura.registros.SegmentoB;
+import br.com.caletti.cnaber.tests.estrutura.registros.SegmentoATest;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -26,6 +27,8 @@ public class Cnab240Test {
     @Test
     public void montarArquivoCnab240Test() {
 
+        SegmentoATest segmentoATest = new SegmentoATest();
+
         Cnab240 cnab = new Cnab240();
 
         EstruturaLote lote1 = new EstruturaLote();
@@ -33,7 +36,7 @@ public class Cnab240Test {
         EstruturaTransacao transacao1 = new EstruturaTransacao();
         SegmentoB segmentoB1 = new SegmentoB();
         transacao1.adicionarSegmento(segmentoB1);
-        SegmentoA segmentoA1 = new SegmentoA();
+        SegmentoA segmentoA1 = segmentoATest.montarSegmentoA();
         transacao1.adicionarSegmento(segmentoA1);
         lote1.adicionarEstruturaTransacao(transacao1);
 

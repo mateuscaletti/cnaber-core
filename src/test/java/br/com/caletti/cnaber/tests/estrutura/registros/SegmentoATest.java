@@ -4,7 +4,6 @@ import br.com.caletti.cnaber.enums.Cnab240CodigoCamaraCentralizadoraEnum;
 import br.com.caletti.cnaber.enums.Cnab240CodigoInstrucaoMovimentoEnum;
 import br.com.caletti.cnaber.enums.Cnab240TipoMovimentoEnum;
 import br.com.caletti.cnaber.enums.Cnab240TipoRegistroEnum;
-import br.com.caletti.cnaber.estrutura.Cnab240;
 import br.com.caletti.cnaber.estrutura.registros.SegmentoA;
 import org.junit.Test;
 
@@ -12,9 +11,7 @@ import static org.junit.Assert.*;
 
 public class SegmentoATest {
 
-    @Test
-    public void montarLinhaRegistroCnab240() {
-
+    public SegmentoA montarSegmentoA() {
         SegmentoA segmentoA = new SegmentoA();
 
         segmentoA.setCodigoBanco("748");
@@ -44,6 +41,14 @@ public class SegmentoATest {
         segmentoA.setCodigoFinalidadeComplementar("8");
         segmentoA.setAvisoFavorecido("0");
         segmentoA.setCodigoOcorrencia("BD");
+
+        return segmentoA;
+    }
+
+    @Test
+    public void montarLinhaRegistroCnab240() {
+
+        SegmentoA segmentoA = this.montarSegmentoA();
 
         String linhaEsperada = "7480001300010A0000180010786700000000987239 FAVORECIDO DE TED DO BANCO XPTNRO DOCUM NF TESTE  16022018BRL000000000000000000000000012398NRO DOCUM BANCO     17022018000000000012399                                        9878   8    0BD        ";
 

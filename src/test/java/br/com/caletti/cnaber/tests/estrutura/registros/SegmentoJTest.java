@@ -10,9 +10,7 @@ import static org.junit.Assert.*;
 
 public class SegmentoJTest {
 
-    @Test
-    public void montarLinhaRegistroCnab240() {
-
+    public SegmentoJ montarSegmentoJ() {
         SegmentoJ segmentoJ = new SegmentoJ();
 
         segmentoJ.setCodigoBanco("748");
@@ -34,6 +32,14 @@ public class SegmentoJTest {
         segmentoJ.setNumeroDOcumentoAtribuidoPeloBanco("DOCUM BANCO");
         segmentoJ.setCodigoMoeda("09");
         segmentoJ.setCodigoOcorrencia("BD");
+
+        return segmentoJ;
+    }
+
+    @Test
+    public void montarLinhaRegistroCnab240() {
+
+        SegmentoJ segmentoJ = this.montarSegmentoJ();
 
         String linhaEsperada = "7480001300010J00074891736900000306171117216800301361050340100NOME DO BENEFICIARIO DO CNABER1602201800000000000056700000000000034500000000000073417022018000000000000789000000000000765DOCUM EMPRESA       DOCUM BANCO         09      BD        ";
 
