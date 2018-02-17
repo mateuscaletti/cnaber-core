@@ -2,10 +2,18 @@ package br.com.caletti.cnaber.enums;
 
 public enum Cnab240TipoRegistroEnum {
 
-    HEADER(1);
+    HEADER_ARQUIVO(0),
+    HEADER_LOTE(1),
+    DETALHE(3),
+    TRAILER_LOTE(5),
+    TRAILER_ARQUIVO(9);
 
-    private int cnab240tipoRegistro;
+    private Integer cnab240tipoRegistro;
 
-    Cnab240TipoRegistroEnum(int valor) { cnab240tipoRegistro = valor; }
+    Cnab240TipoRegistroEnum(Integer valor) { cnab240tipoRegistro = valor; }
+
+    public Integer getValor() {
+        return cnab240tipoRegistro;
+    }
 
 }

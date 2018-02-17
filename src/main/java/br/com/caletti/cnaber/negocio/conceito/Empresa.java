@@ -4,18 +4,18 @@ import br.com.caletti.cnaber.enums.TipoInscricaoEnum;
 
 public class Empresa {
 
-    private Enum<TipoInscricaoEnum> tipoInscricao;
+    private TipoInscricaoEnum tipoInscricao;
     private String numeroInscricao;
     private String codigoConvenio;
     private ContaCorrente contaCorrente;
     private String nome;
     private Endereco endereco;
 
-    public Enum<TipoInscricaoEnum> getTipoInscricao() {
+    public TipoInscricaoEnum getTipoInscricao() {
         return tipoInscricao;
     }
 
-    public void setTipoInscricao(Enum<TipoInscricaoEnum> tipoInscricao) {
+    public void setTipoInscricao(TipoInscricaoEnum tipoInscricao) {
         this.tipoInscricao = tipoInscricao;
     }
 

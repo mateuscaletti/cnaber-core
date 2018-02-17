@@ -49,26 +49,26 @@ public class Cnab240 {
 
         StringBuilder arquivo = new StringBuilder();
 
-        arquivo.append(this.getHeaderArquivo().montarLinhaRegistroCnab240().getLinhaRegistroCnab240()).append("\n\r");
+        arquivo.append(this.getHeaderArquivo().getLinhaRegistroCnab240()).append("\n\r");
 
         ArrayList<EstruturaLote> lotes = this.getLotes();
         for(EstruturaLote lote : lotes) {
-            arquivo.append(lote.getHeaderLote().montarLinhaRegistroCnab240().getLinhaRegistroCnab240()).append("\n\r");
+            arquivo.append(lote.getHeaderLote().getLinhaRegistroCnab240()).append("\n\r");
 
             ArrayList<EstruturaTransacao> transacoes = lote.getEstruturaTransacoes();
             for(EstruturaTransacao transacao : transacoes) {
 
                 ArrayList<Segmento> segmentos = transacao.getSegmentosOrdenados();
                 for(Segmento segmento : segmentos) {
-                    arquivo.append(segmento.montarLinhaRegistroCnab240().getLinhaRegistroCnab240()).append("\n\r");
+                    arquivo.append(segmento.getLinhaRegistroCnab240()).append("\n\r");
                 }
 
             }
 
-            arquivo.append( lote.getTrailerLote().montarLinhaRegistroCnab240().getLinhaRegistroCnab240()).append("\n\r");
+            arquivo.append( lote.getTrailerLote().getLinhaRegistroCnab240()).append("\n\r");
         }
 
-        arquivo.append(this.getTrailerArquivo().montarLinhaRegistroCnab240().getLinhaRegistroCnab240()).append("\n\r");
+        arquivo.append(this.getTrailerArquivo().getLinhaRegistroCnab240()).append("\n\r");
 
         this.setConteudoArquivoCnab240(arquivo.toString());
 

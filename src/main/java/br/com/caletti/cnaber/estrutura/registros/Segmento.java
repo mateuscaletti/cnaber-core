@@ -1,9 +1,16 @@
 package br.com.caletti.cnaber.estrutura.registros;
 
+import br.com.caletti.cnaber.enums.Cnab240TipoRegistroEnum;
+
 abstract public class Segmento extends Registro implements Comparable<Segmento> {
 
     private int ordemApresentacao;
     private String codigoSegmento;
+    private String numeroSequencialRegistroNoLote;
+
+    public Segmento() {
+        this.setTipoRegistro(Cnab240TipoRegistroEnum.DETALHE);
+    }
 
     public int getOrdemApresentacao() {
         return ordemApresentacao;
@@ -17,8 +24,16 @@ abstract public class Segmento extends Registro implements Comparable<Segmento> 
         return codigoSegmento;
     }
 
-    public void setCodigoSegmento(String codigoSegmento) {
+    void setCodigoSegmento(String codigoSegmento) {
         this.codigoSegmento = codigoSegmento;
+    }
+
+    public String getNumeroSequencialRegistroNoLote() {
+        return numeroSequencialRegistroNoLote;
+    }
+
+    public void setNumeroSequencialRegistroNoLote(String numeroSequencialRegistroNoLote) {
+        this.numeroSequencialRegistroNoLote = numeroSequencialRegistroNoLote;
     }
 
     @Override
