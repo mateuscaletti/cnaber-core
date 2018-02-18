@@ -10,9 +10,7 @@ import static org.junit.Assert.*;
 
 public class HeaderArquivoTest {
 
-    @Test
-    public void montarLinhaRegistroCnab240Test() {
-
+    public HeaderArquivo montarHeaderArquivo() {
         HeaderArquivo headerArquivo = new HeaderArquivo();
 
         headerArquivo.setCodigoBanco("748");
@@ -34,6 +32,14 @@ public class HeaderArquivoTest {
         headerArquivo.setNumeroSequencialArquivo("8");
         //headerArquivo.setNumeroVersaoLayoutArquivo("");
         //headerArquivo.setDensidadeGravacaoArquivo("");
+
+        return headerArquivo;
+    }
+
+    @Test
+    public void montarLinhaRegistroCnab240Test() {
+
+        HeaderArquivo headerArquivo = this.montarHeaderArquivo();
 
         String linhaEsperada = "74800000         100012345678999XYZ                 0011630000000824313 MATEUS MARTINS CALETTI TESTE MBANCO INTERNACIONAL DO CNABER           11502201818370100000810300000                                                                     ";
 

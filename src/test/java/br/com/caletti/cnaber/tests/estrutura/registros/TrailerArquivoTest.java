@@ -8,9 +8,7 @@ import static org.junit.Assert.*;
 
 public class TrailerArquivoTest {
 
-    @Test
-    public void montarLinhaRegistroCnab240() {
-
+    public TrailerArquivo montarTrailerArquivo() {
         TrailerArquivo trailerArquivo = new TrailerArquivo();
 
         trailerArquivo.setCodigoBanco("748");
@@ -19,6 +17,14 @@ public class TrailerArquivoTest {
         trailerArquivo.setQuantidadeLotesArquivo(10);
         trailerArquivo.setQuantidadeRegistrosArquivo(20);
         trailerArquivo.setQuantidadeContasConciliar(0);
+
+        return trailerArquivo;
+    }
+
+    @Test
+    public void montarLinhaRegistroCnab240() {
+
+        TrailerArquivo trailerArquivo = this.montarTrailerArquivo();
 
         String linhaEsperada = "74899999         000010000020000000                                                                                                                                                                                                             ";
 
