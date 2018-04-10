@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>br.com.caletti</groupId>
-    <artifactId>cnaber</artifactId>
+    <artifactId>cnaber-core</artifactId>
     <version>1.0.0.0</version>
     <packaging>jar</packaging>
 
